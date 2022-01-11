@@ -2,14 +2,13 @@ from django.contrib.messages import constants
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.contrib import messages
+from django.contrib import messages, auth
 
 
 def register(req):
-    # if req.user.is_authenticated:
-    #     return redirect('/')
-
     if req.method == 'GET':
+        if req.user.is_authenticated:
+            return redirect('/')
         return render(req, 'register.html')
     elif req.method == 'POST':
         username = req.POST.get('username')
@@ -46,10 +45,9 @@ def register(req):
 
 
 def login(req):
-    # if req.user.is_authenticated:
-    #     return redirect('/')
-
     if req.method == "GET":
+        if req.user.is_authenticated:
+            return redirect('/')
         return render(req, 'login.html')
     elif req.method == "POST":
         username = req.POST.get('username')
@@ -61,7 +59,7 @@ def login(req):
                                  'Username ou senha inválidos')
 
             return redirect('/auth/login')
-    else:
-        auth.login(req, usuario)
+        else:
+            auth.login(req, usuario)
 
-        return redirect('/')
+            return redirect('/')
