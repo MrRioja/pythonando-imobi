@@ -1,8 +1,8 @@
 from django.contrib.messages import constants
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.http import HttpResponse
 from django.contrib import messages, auth
+from django.http import HttpResponse
 
 
 def register(req):
@@ -63,3 +63,9 @@ def login(req):
             auth.login(req, usuario)
 
             return redirect('/')
+
+
+def logout(req):
+    auth.logout(req)
+
+    return redirect('/auth/login')
