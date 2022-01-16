@@ -5,6 +5,10 @@ from django.contrib.auth.models import User
 class Imagem(models.Model):
     img = models.ImageField(upload_to='img')
 
+    class Meta():
+        verbose_name = 'Imagem'
+        verbose_name_plural = 'Imagens'
+
     def __str__(self) -> str:
 
         return self.img.url
@@ -13,6 +17,10 @@ class Imagem(models.Model):
 class Cidade(models.Model):
     nome = models.CharField(max_length=30)
 
+    class Meta():
+        verbose_name = 'Cidade'
+        verbose_name_plural = 'Cidades'
+
     def __str__(self) -> str:
         return self.nome
 
@@ -20,12 +28,20 @@ class Cidade(models.Model):
 class DiasVisita(models.Model):
     dia = models.CharField(max_length=20)
 
+    class Meta():
+        verbose_name = 'Dias de visita'
+        verbose_name_plural = 'Dias de visitas'
+
     def __str__(self) -> str:
         return self.dia
 
 
 class Horario(models.Model):
     horario = models.TimeField()
+
+    class Meta():
+        verbose_name = 'Horário'
+        verbose_name_plural = 'Horários'
 
     def __str__(self) -> str:
         return str(self.horario)
@@ -49,6 +65,10 @@ class Imovel(models.Model):
     dias_visita = models.ManyToManyField(DiasVisita)
     horarios = models.ManyToManyField(Horario)
 
+    class Meta():
+        verbose_name = 'Imóvel'
+        verbose_name_plural = 'Imóveis'
+
     def __str__(self) -> str:
         return self.rua
 
@@ -70,6 +90,10 @@ class Visitas(models.Model):
     horario = models.TimeField()
     status = models.CharField(
         max_length=1, choices=choices_status, default="A")
+
+    class Meta():
+        verbose_name = 'Visita'
+        verbose_name_plural = 'Visitas'
 
     def __str__(self) -> str:
         return self.usuario.username
