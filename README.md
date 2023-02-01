@@ -57,15 +57,15 @@ Ao clicar no botão `Agendar visita` presente na pagina de detalhes do imóvel, 
 
 Após concluir o agendamento (também acessível através do link `Agendamentos` presente no header da página) o usuário poderá ver seus agendamentos cadastrados e seus respectivos status, como exemplificado abaixo:
 
-- **Agendamento Concluído**: Representa um agendamento realizado com sucesso.
+- **Satus Agendado**: Representa um agendamento realizado com sucesso.
 
 ![Agendamento concluído](.github/agendamentos-agendado.png)
 
-- **Agendamento Finalizado**: Representa um agendamento cujo a visita já ocorreu.
+- **Status Finalizado**: Representa um agendamento cujo a visita já ocorreu.
 
 ![Agendamento finalizado](.github/agendamento-finalizado.png)
 
-- **Agendamento Cancelado**: Representa um agendamento cancelado pelo usuário.
+- **Status Cancelado**: Representa um agendamento cancelado pelo usuário.
 
 ![Agendamento cancelado](.github/agendamentos-cancelado.png)
 
